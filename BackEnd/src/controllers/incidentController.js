@@ -4,6 +4,9 @@ const connection = require('../database/connection')
 let index = async (req, res) => {
     const {page= 1 } = req.query
 
+    console.log(await connection('incidents').select('*'))
+
+
     const [count] = await connection('incidents')
     .count('*')
     
